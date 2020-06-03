@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 
 
@@ -15,7 +15,7 @@ public class Trig
 
     public Trig()
 	{
-        
+        	//
 	}
 
     //数据采集系统读入数据
