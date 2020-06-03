@@ -6,14 +6,15 @@
 **Post-trigger**（普通触发）
 
 Post-trigger 是最简单的触发模式。当用户下达开始采集的命令后，FPGA 或 PLD 会启动 DMA 并等待触发事件。当触发发生后立即开始采样，直到满足用户设定的采样点数或用户下达停止命令为止。诸如突波检测、多张数据采集卡的同步都可以使用这种触发模式。
+![image](hhttps://github.com/vvanggeng/img/blob/master/1.png)
 
 **Middle-trigger**（中间触发）
 
 Middle-trigger 是 pre-trigger 的延伸。在 middle-trigger 中，用户可以同时取得触发事件前后的数据。如图所示，用户可以指定 M (触发前) + N (触发后) 笔数据，用以观察在触发前后信号变化的情形。
+![image](https://github.com/vvanggeng/img/blob/master/2.png)
 
 **以中间触发功能的实现通常需要配套硬件的支持，在大部分低端采集卡和小型数据采集设备中不具备此功能，但该功能可以通过软件实现。**
 
-------------
 ##思路
 ###软件触发
 设置数据采集系统模式为连续采集，首先设定一个存储触发后数据的数组buffer1，大小为N，设定一个信号阈值，当采集数据大于阈值时，开始把采集数据拷入数组，实现触发点后N个信号的采集。
