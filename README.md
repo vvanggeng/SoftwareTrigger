@@ -7,7 +7,7 @@
 
 Post-trigger 是最简单的触发模式。当用户下达开始采集的命令后，FPGA 或 PLD 会启动 DMA 并等待触发事件。当触发发生后立即开始采样，直到满足用户设定的采样点数或用户下达停止命令为止。诸如突波检测、多张数据采集卡的同步都可以使用这种触发模式。
 
-![image](hhttps://github.com/vvanggeng/img/blob/master/1.png)
+![image](https://github.com/vvanggeng/img/blob/master/1.png)
 
 **Middle-trigger**（中间触发）
 
